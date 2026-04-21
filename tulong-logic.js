@@ -25,7 +25,7 @@
         // Protect the page: Redirect if not logged in
         onAuthStateChanged(auth, (user) => {
             if (!user) {
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             }
         });
    
