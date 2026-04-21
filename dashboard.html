@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.U.L.O.N.G. Dispatch Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="header-container">
+        <img src="tulonglogo.png" style="height:50px;" alt="Logo">
+        <span class="brand-badge">T.U.L.O.N.G.</span>
+        <span style="font-size: 30px; opacity: 0.9;">Tactical Unit Locator & Network Grid</span>
+        <img src="TAGLINE.png" style="height:250px; margin-left: 140px;" alt="Logo">
+    </div>
+
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <button class="report-btn" id="report-toggle">⚠️ Report Emergency</button>
+            
+            <div class="stat-box" style="border-color: #ffcc00;">
+                <span class="stat-number" id="total-incidents" style="color: #ffcc00;">0</span>
+                <span class="stat-label">Active Incidents</span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-number" id="station-count" style="color: white;">0</span>
+                <span class="stat-label">Nearby Stations</span>
+            </div>
+
+            <button class="excel-btn" onclick="exportToExcel()">📊 Export EOD Report</button>
+            <button class="wipe-btn" onclick="wipeMapAndExport()">🧹 Wipe Map & Export</button>
+
+            <div style="margin-top: 0px; padding-top: 0px;">
+                <button class="logout-btn" id="logout-trigger">✖ Terminate Session</button>
+            </div>
+
+            <div class="station-list" id="station-container">
+                <div style="color: #4da3ff; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #043a6d; margin-top: 10px;">FIRE STATIONS</div>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script type="module" src="tulong-logic.js"></script>
