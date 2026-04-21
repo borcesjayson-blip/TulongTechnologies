@@ -625,7 +625,7 @@ window.updateOtherMedicalText = function(id) {
         document.getElementById('logout-trigger').addEventListener('click', function() {
             if (confirm("CONFIRM SYSTEM LOGOUT?\n PLEASE DOWNLOAD EOD REPORT")) {
                 window.firebaseSignOut().then(() => {
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                 }).catch(err => console.error(err));
             }
             
