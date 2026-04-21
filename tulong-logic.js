@@ -152,7 +152,7 @@ onValue(locationsRef, (snapshot) => {
         const fireIcon = L.icon({ iconUrl: "fireStation1.png", iconSize: [30, 30] });
         const volunteerIcon = L.icon({ iconUrl: "volunteerStation1.png", iconSize: [30, 30] });
         const truckIcon = L.icon({ iconUrl: "firetruck.png", iconSize: [25, 25] });
-        const ambulanceIcon = L.icon({ iconUrl: "ambulance.png", iconSize: [35, 35] });
+        const ambulanceIcon = L.icon({ iconUrl: "AMBULANCE.png", iconSize: [35, 35] });
 
         let isReporting = false;
         let incidentCounts = { fire: 0, med: 0 };
